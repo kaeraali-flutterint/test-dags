@@ -1,0 +1,6 @@
+[project]
+name = "test-dags"
+dynamic = ["version"]
+dependencies = ["ruff==0.14.9", "apache-airflow==3.0.6"]
+[tool.ruff.lint]
+select = ["AIR", "E4", "E7", "E9", "F"]
