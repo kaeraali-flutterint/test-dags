@@ -10,5 +10,5 @@ Upload and run `alice_test_dag.py`
 
 You probably want a virtual environment (`python3 -m venv venv && source ./venv/bin/activate`), and then:
 
-- `pip3 install .` to install development dependencies
-- `ruff check` to ensure things are looking healthy
+- `make install` to install development dependencies
+- `make check` to ensure things are looking healthy
