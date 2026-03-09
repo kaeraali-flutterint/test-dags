@@ -1,0 +1,6 @@
+install:
+	pip install --constraint https://raw.githubusercontent.com/apache/airflow/constraints-3.0.6/constraints-3.12.txt -e .
+
+@phony: check
+check:
+	ruff check
