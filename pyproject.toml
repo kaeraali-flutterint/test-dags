@@ -1,7 +1,7 @@
 [project]
 name = "test-dags"
 dynamic = ["version"]
-dependencies = ["ruff", "apache-airflow==3.0.6", "apache-airflow[amazon]"]
+dependencies = ["ruff", "apache-airflow==3.2.0", "apache-airflow[amazon]"]
 [tool.setuptools.packages]
 find = {}
 [tool.ruff.lint]
