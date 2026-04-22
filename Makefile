@@ -4,3 +4,7 @@ install:
 @phony: check
 check:
 	ruff check
+
+@phony: test
+test:
+	AIRFLOW_HOME=$(pwd) python tests/test_dag_integrity.py
