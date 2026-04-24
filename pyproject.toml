@@ -3,7 +3,7 @@ name = "test-dags"
 dynamic = ["version"]
 dependencies = [
   "ruff",
-  "apache-airflow==3.0.6",
+  "apache-airflow==3.2.1",
   "apache-airflow[amazon]",
   "paramiko",
   "pytest",
