@@ -1,16 +1,16 @@
 import os
 
-import pendulum
 from airflow.providers.smtp.operators.smtp import EmailOperator
 from airflow.providers.standard.operators.python import PythonOperator
 from airflow.sdk import dag
+from pendulum import datetime
 
 dag_id = os.path.basename(__file__).replace(".py", "")
 
 default_args = {
     "owner": "airflow",
     "depends_on_past": False,
-    "start_date": pendulum.today() - pendulum.duration(2),
+    "start_date": datetime(2021, 1, 1, tz="UTC"),
     "retries": 1,
 }
 

@@ -1,11 +1,11 @@
 import paramiko
-import pendulum
 from airflow.sdk import DAG, task
+from pendulum import datetime
 
 with DAG(
     dag_id="alice_paramiko",
     schedule=None,
-    start_date=pendulum.datetime(2021, 1, 1, tz="UTC"),
+    start_date=datetime(2021, 1, 1, tz="UTC"),
     catchup=False,
     tags=["alice"],
 ) as dag:
