@@ -29,7 +29,7 @@ default_args = {
 def hello_world(x):
     print(f"hello {x}")
     # This should always fail
-    assert True == False
+    assert True == False  # noqa: E712
 
 
 @dag(
