@@ -15,3 +15,7 @@ with DAG(
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy)
         print("paramiko is installed")
+
+
+if __name__ == "__main__":
+    dag.test()

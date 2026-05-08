@@ -8,3 +8,4 @@ check:
 @phony: test
 test:
 	AIRFLOW_HOME=$(pwd) python tests/test_dag_integrity.py
+	find dags -type f -name '*.py' -exec python {} \;
