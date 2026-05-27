@@ -4,9 +4,9 @@ Example DAG code useful to test that basic Airflow 3.x functionality is working.
 
 ## Dependencies
 
-These DAGs are written for an Airflow 3.0.6 installation, they've been tested in an AWS MWAA environment but should work anywhere as long as you have the right dependencies
+These DAGs are written for an Airflow 3.2.1 installation, they've been tested in an AWS MWAA environment but should work anywhere as long as you have the right dependencies
 
-- `apache-airflow==3.0.6`
+- `apache-airflow==3.2.1`
 - `apache-airflow[amazon]`
 - `paramiko` for the paramiko DAG
 
