@@ -12,6 +12,7 @@ BUCKET = "alice_test_dags"
     start_date=datetime(2021, 1, 1),
     # ordinarily this would run shortly after midnight and wait for the partner to send their daily reports
     # schedule="@daily",
+    schedule="None",
     catchup=False,
     tags=["alice"],
 )
