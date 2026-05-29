@@ -2,3 +2,5 @@ venv
 build
 *.egg-info/
 __pycache__/
+airflow.cfg
+airflow.db
