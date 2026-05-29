@@ -7,5 +7,10 @@ check:
 
 @phony: test
 test:
-	AIRFLOW_HOME=$(pwd) AIRFLOW__LOGGING__BASE_LOG_FOLDER=./logs python tests/test_dag_integrity.py
-	find dags -type f -name '*.py' -exec python {} \;
+	AIRFLOW_HOME=$(shell pwd) AIRFLOW__LOGGING__BASE_LOG_FOLDER=./logs airflow db reset -y
+	AIRFLOW_HOME=$(shell pwd) AIRFLOW__LOGGING__BASE_LOG_FOLDER=./logs airflow db migrate
+	AIRFLOW_HOME=$(shell pwd) AIRFLOW__LOGGING__BASE_LOG_FOLDER=./logs python tests/test_dag_integrity.py
+	AIRFLOW_HOME=$(shell pwd); export AIRFLOW_HOME; \
+		for file in $(shell find dags -type f -name '*.py'); do \
+			python "$$file" || exit 1; \
+		done
