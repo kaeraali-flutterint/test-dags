@@ -1,5 +1,5 @@
 install:
-	pip install --constraint https://raw.githubusercontent.com/apache/airflow/constraints-3.2.1/constraints-3.12.txt -e .
+	pip install --constraint https://raw.githubusercontent.com/apache/airflow/constraints-3.3.1/constraints-3.12.txt -e .
 
 @phony: check
 check:

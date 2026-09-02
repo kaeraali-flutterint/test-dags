@@ -1,8 +1,9 @@
 """Test the validity of all DAGs. This test ensures that all Dags have tags, retries set to two, and no import errors. Feel free to add and remove tests."""
 
-import os
 import logging
+import os
 from contextlib import contextmanager
+
 import pytest
 from airflow.models import DagBag
 
@@ -23,7 +24,7 @@ def get_import_errors():
     Generate a tuple for import errors in the dag bag
     """
     with suppress_logging("airflow"):
-        dag_bag = DagBag(include_examples=False)
+        dag_bag = DagBag()
 
         def strip_path_prefix(path):
             return os.path.relpath(path, os.environ.get("AIRFLOW_HOME"))
@@ -39,7 +40,7 @@ def get_dags():
     Generate a tuple of dag_id, <DAG objects> in the DagBag
     """
     with suppress_logging("airflow"):
-        dag_bag = DagBag(include_examples=False)
+        dag_bag = DagBag()
 
     def strip_path_prefix(path):
         return os.path.relpath(path, os.environ.get("AIRFLOW_HOME"))
@@ -78,6 +79,6 @@ def test_dag_retries(dag_id, dag, fileloc):
     """
     test if a DAG has retries set
     """
-    assert (
-        dag.default_args.get("retries", None) >= 2
-    ), f"{dag_id} in {fileloc} does not have retries not set to 2."
+    assert dag.default_args.get("retries", None) >= 2, (
+        f"{dag_id} in {fileloc} does not have retries not set to 2."
+    )
