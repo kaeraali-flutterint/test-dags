@@ -32,3 +32,7 @@ You probably want a virtual environment (`python3 -m venv venv && source ./venv/
 PRs to this repository will run all of the above via GitHub Actions
 
 We like but do not enforce [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
+## See also
+
+- [Shrividya/Airflow-Summit-Reconnect-Demo](https://github.com/Shrividya/Airflow-Summit-Reconnect-Demo) Demo code for the talk "Self-Healing Airflow: Pipelines That Fix Themselves". It runs the same payments pipeline three ways on Airflow 3.3 in Docker: with rule-based retries and fallbacks, with an LLM deciding retries and repairs, and with a hybrid of the two.
